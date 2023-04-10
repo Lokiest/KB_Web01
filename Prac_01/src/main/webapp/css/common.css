@@ -1,0 +1,12 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+
+#banner{
+	background-color: blue;
+	color: white;
+	font-size: xx-large;
+	text-align: center;
+	padding: 30px;
+}
