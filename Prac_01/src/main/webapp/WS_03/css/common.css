@@ -1,15 +1,15 @@
-/* banner 적용*/
-
 *{
+	/*margin: 0;
+	padding: 0;*/
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
 
 #banner{
-	background-color: blue;
-	color:white;
+	background-color: #576CBC;
+	color: #F6F1E9;
 	padding: 30px;
 	font-size: xx-large;
 	text-align: center;
+	/*margin-top: 5px;*/
 }
+
