@@ -39,38 +39,35 @@
     
     
   </style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   
   <script type="text/javascript">
-    let bannerIndex=0;
-    let bannerList=["국민의 은행이 되겠습니다.","5060 웰컴패키지, 최대 7만원 혜택을 드립니다.",
-    	  "타행이체, 자동이체 수수료 면제","저녁 6시까지 영업합니다."];
-    
-     onload = function(){
-    	 //alert(22)
-    	let bannerEle =  document.querySelector("#banner");
-    	bannerEle.innerHTML = bannerList[bannerIndex++];
+    $(function(){
+    	 let bannerIndex=0;
+    	 let bannerList=["국민의 은행이 되겠습니다.","5060 웰컴패키지, 최대 7만원 혜택을 드립니다.",
+    	    	  "타행이체, 자동이체 수수료 면제","저녁 6시까지 영업합니다."];
+    	    
+    	
+    	let bannerEle =  $("#banner");
+    	bannerEle.html ( bannerList[bannerIndex++]);
     	
     	// 주기적으로 banner 변경
      	setInterval(function(){
-     		bannerEle.innerHTML = bannerList[bannerIndex++];
+     		bannerEle.html ( bannerList[bannerIndex++]);
      		if(bannerIndex==bannerList.length ){
      			bannerIndex=0;
      		}
-     	} , 5000);
-    	
-    	
-    	 
-    	 //버튼 클릭 이벤트
-    	 document.querySelectorAll(".main-item-btn").forEach(function(item, index){
-    		 item.onclick = function(){
-    			let id = this.closest(".main-item").getAttribute('data-main-item-id');
-    			alert(id)
-    		 }
-    	 });
-    	 
+     	} , 2000);
+   
+      ////////////////////////////////////////
+      $(".main-item-btn").click(function(){
+    	   let id = $(this).closest(".main-item").attr('data-main-item-id');
+ 			alert(id)
+      })
     
-    	 
-     }
+    });//ready끝
+  
+
   
   </script>
 </head>
