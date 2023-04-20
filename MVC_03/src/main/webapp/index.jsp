@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>  
+<body>
 <h1>Web MVC Reflection  TEST </h1>
 \${path} = ${path}
 <h3>
