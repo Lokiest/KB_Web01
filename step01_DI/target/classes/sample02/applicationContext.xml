@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="sample02.Member" id = "member">
+		<constructor-arg value="park" />
+	</bean>
+	
+	<!-- 인수 2개 받는 생성자를 호출 -->
+	<bean class="sample02.Member" id = "member2">
+		<constructor-arg value="park" />
+		<constructor-arg value="123" type="int"/>
+	</bean>
+	
+	<bean class="sample02.Member" id = "member3">
+		<constructor-arg value="park" index="0" />
+		<constructor-arg value="123" type="int" index="2"/>
+		<constructor-arg value="seoul" index="3"/>
+		<constructor-arg value="1234" index="1"/>
+	</bean>
+	
+	<bean class="sample02.MemberDAO" id="dao" />
+	<bean class="sample02.MemberService" id="service" >
+		<constructor-arg ref="dao" />
+		<constructor-arg ref="member3" />
+	</bean>
+	
+</beans>
