@@ -7,8 +7,25 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 		
 	<context:property-placeholder location="classpath:info2.properties"/>
+	<context:property-placeholder location="classpath:info3.properties"/>
 	
-	<bean class="sample05.UserBean" id="user" />
-	<bean class="sample05.ProductBean" id="product" />
+	<bean class="sample05.UserBean" id="user">
+		<property name="id" value="park"></property>
+		<property name="addr" value="seoul"></property>
+		<property name="name" value="juho"></property>
+		<property name="phone" value="1234"></property>
+	</bean>
+	<bean class="sample05.ProductBean" id="product">
+		<property name="pname" value="새우"></property>
+		<property name="price" value="30000"></property>
+		<property name="pno" value="100"></property>
+	</bean>
+	
+	<bean class="sample05.OrderMessageImpl" id="order">
+		<property name="orderId" value="1234567" />
+		<property name="message" value="Quick Post" />
+		<property name="userBean" ref="user"></property>
+		<property name="proudctBean" ref="product"></property>
+	</bean>
 
 </beans>

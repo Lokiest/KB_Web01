@@ -9,8 +9,8 @@ public class MainApp5 {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("sample05/applicationContext.xml");
 		
-//		StudentController control = context.getBean("control", StudentController.class);
-//		control.insert();
+		OrderMessage order = context.getBean("order", OrderMessageImpl.class);
+		order.getOrderMessage();
 	}
 
 }
